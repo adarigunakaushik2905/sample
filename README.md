@@ -1,338 +1,247 @@
-# sample
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adari Guna Kaushik | AI & Cybersecurity Enthusiast</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free educational tutorials and resources by Brainify" />
+    <meta name="keywords" content="education, tutorials, YouTube, study guides" />
+    <title>SparkForScholars - Learn with Us</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
         }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        header {
+            background: #1e90ff;
             color: white;
-            padding: 5rem 0;
+            padding: 1rem;
+            text-align: center;
         }
-        .navbar {
-            background-color: var(--primary-color);
+        header h1 {
+            margin-bottom: 0.5rem;
         }
-        .section-title {
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
         }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary-color);
+        nav a:hover {
+            text-decoration: underline;
         }
-        .skill-badge {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            margin: 5px;
-            padding: 8px 15px;
-            border-radius: 20px;
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .hero {
+            text-align: center;
+        }
+        .hero iframe {
+            max-width: 100%;
+        }
+        .btn {
             display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
         }
-        .project-card {
-            transition: transform 0.3s;
-            margin-bottom: 20px;
+        .btn:hover {
+            background: #218838;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .video-grid div {
+            text-align: center;
+        }
+        .resource-list {
+            list-style: none;
+            margin: 1rem 0;
+        }
+        .resource-list li {
+            margin: 0.5rem 0;
+        }
+        .resource-list a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .resource-list a:hover {
+            text-decoration: underline;
+        }
+        .blog-post {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .blog-post h3 {
+            margin-bottom: 0.5rem;
+        }
+        .blog-content {
+            max-height: 4rem;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .blog-content.expanded {
+            max-height: none;
+        }
+        form {
+            max-width: 500px;
+            margin: 1rem 0;
+        }
+        form label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            padding: 0.5rem 1rem;
+            background: #1e90ff;
+            color: white;
             border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .project-card:hover {
-            transform: translateY(-10px);
+        form button:hover {
+            background: #0066cc;
         }
         footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .hero iframe {
+                width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Adari Guna Kaushik</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <h1>Brainify - Learn with Us</h1>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#videos">Videos</a>
+            <a href="#resources">Resources</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero text-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Adari Guna Kaushik</h1>
-            <p class="lead mb-4">AI & Cybersecurity Enthusiast | Python Developer | Continuous Learner</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="#contact" class="btn btn-light btn-lg px-4">Contact Me</a>
-                <a href="https://github.com/adarigunakaushik2905" target="_blank" class="btn btn-outline-light btn-lg px-4">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="hero" class="hero">
+            <h2>Welcome to Brainify</h2>
+            <p>Explore free tutorials and resources to help you excel in your studies.</p>
+           <video width="560" height="315" controls>
+  <source src="Brainify  Empowering Your AI Learning Journey_free.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <p class="lead">Passionate B.Sc. Artificial Intelligence, Robotics, and Cyber Security (AIRCS) student with a strong foundation in Python programming and growing interest in Machine Learning.</p>
-                    <p>I enjoy solving problems with code and am currently expanding my knowledge through hands-on projects, academic coursework, and certifications. I believe in continuous learning and love applying what I learn to real-world challenges.</p>
-                    <div class="mt-4">
-                        <a href="#" class="btn btn-primary me-2">Download Resume</a>
-                        <a href="https://www.linkedin.com/in/quna-kaushik-adari" target="_blank" class="btn btn-outline-primary">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <img src="profile-image.jpg" alt="Adari Guna Kaushik" class="img-fluid rounded shadow">
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4 class="mb-3">Programming Languages</h4>
-                    <div>
-                        <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-badge">C</span>
-                    </div>
-                    
-                    <h4 class="mt-4 mb-3">Tools & Technologies</h4>
-                    <div>
-                        <span class="skill-badge">NumPy</span>
-                        <span class="skill-badge">Pandas</span>
-                        <span class="skill-badge">Scikit-learn</span>
-                    </div>
+        <section id="videos">
+            <h2>Featured Videos</h2>
+            <div class="video-grid">
+                <div>
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video 1" frameborder="0" allowfullscreen></iframe>
+                    <p>Math Basics</p>
                 </div>
-                <div class="col-md-6">
-                    <h4 class="mb-3">Soft Skills</h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Positive attitude toward learning and work</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Strong leadership and teamwork skills</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Goal-oriented mindset</li>
-                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Good communication skills</li>
-                    </ul>
-                    
-                    <h4 class="mt-4 mb-3">Languages</h4>
-                    <div>
-                        <span class="skill-badge">English (Fluent)</span>
-                        <span class="skill-badge">Hindi (Fluent)</span>
-                        <span class="skill-badge">Telugu (Native)</span>
-                    </div>
+                <div>
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/9bZkp7q19f0" title="Video 2" frameborder="0" allowfullscreen></iframe>
+                    <p>Science Explainers</p>
+                </div>
+                <div>
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/e-ORhEE9VVg" title="Video 3" frameborder="0" allowfullscreen></iframe>
+                    <p>Programming Tutorials</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content p-4 shadow-sm rounded bg-white">
-                        <h4>B.Sc. in Artificial Intelligence</h4>
-                        <h5>Aditya Degree College</h5>
-                        <p class="text-muted">2023 – Present</p>
-                        <p>SGPA: 7.96 (Up to 3rd Semester)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content p-4 shadow-sm rounded bg-white">
-                        <h4>Intermediate (MPC)</h4>
-                        <h5>Sri Chaitanya Junior College</h5>
-                        <p class="text-muted">2021 – 2023</p>
-                        <p>GPA: 7.12</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-content p-4 shadow-sm rounded bg-white">
-                        <h4>SSC (10th)</h4>
-                        <h5>Dr. KKR Gowtham School</h5>
-                        <p class="text-muted">2020 – 2021</p>
-                        <p>GPA: 9.5 (Board of Secondary Education, Andhra Pradesh)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+       <section id="resources">
+    <h2>Study Resources</h2>
+    <ul class="resource-list">
+        <li><a href="files/math-formulas.pdf" download>Download 3nd SEM SYllabus</a></li>
+        <li><a href="files/science-notes.pdf" download>Science Revision Notes</a></li>
+        <li><a href="beginners_python_cheat_sheet_pcc_all.pdf" download>Python Programming Cheat Sheet</a></li>
+    </ul>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="row">
-                <!-- Project 1 - Add your actual projects here -->
-                <div class="col-md-4">
-                    <div class="card project-card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Machine Learning Model</h5>
-                            <p class="card-text">Developed a predictive model using Python and Scikit-learn to analyze dataset patterns.</p>
-                            <span class="badge bg-primary">Python</span>
-                            <span class="badge bg-secondary">Scikit-learn</span>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-sm btn-outline-primary">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-md-4">
-                    <div class="card project-card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Cybersecurity Analysis</h5>
-                            <p class="card-text">Conducted vulnerability assessment and implemented security measures based on IBM Cybersecurity certification knowledge.</p>
-                            <span class="badge bg-primary">Cybersecurity</span>
-                            <span class="badge bg-secondary">IBM</span>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="card project-card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Data Analysis Project</h5>
-                            <p class="card-text">Used Pandas and NumPy to clean, analyze, and visualize complex datasets.</p>
-                            <span class="badge bg-primary">Python</span>
-                            <span class="badge bg-secondary">Pandas</span>
-                            <span class="badge bg-secondary">NumPy</span>
-                        </div>
-                        <div class="card-footer bg-transparent">
-                            <a href="#" class="btn btn-sm btn-outline-primary">See Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Pearson MePro</h5>
-                            <p class="card-text">Pearson</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Python Essentials</h5>
-                            <p class="card-text">CISCO Networking Academy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Programming Essentials in C</h5>
-                            <p class="card-text">CISCO Networking Academy</p>
-                        </div>
-                    </div>
+        <section id="blog">
+            <h2>Latest Blog Posts</h2>
+            <div class="blog-post">
+                <h3>How to Study Smarter, Not Harder</h3>
+                <div class="blog-content">
+                    <p>Most students think studying more equals better grades. But what if we told you it’s about technique, not time?</p>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="blog-post">
+                <h3>Top 5 YouTube Channels for Learning</h3>
+                <div class="blog-content">
+                    <p>Discover the best YouTube channels that provide high-quality educational content for free.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="mb-4">
-                        <h4><i class="fas fa-envelope me-2 text-primary"></i> Email</h4>
-                        <p>kaushikguna50@gmail.com</p>
-                    </div>
-                    <div class="mb-4">
-                        <h4><i class="fas fa-phone me-2 text-primary"></i> Phone</h4>
-                        <p>+91 9390339847</p>
-                    </div>
-                    <div class="mb-4">
-                        <h4><i class="fas fa-map-marker-alt me-2 text-primary"></i> Location</h4>
-                        <p>Visakhapatnam, Andhra Pradesh, India</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <form>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name">
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="container">
-            <div class="mb-4">
-                <a href="www.linkedin.com/in/guna-kaushik-adari" target="_blank" class="text-white me-3">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://github.com/adarigunakaushik2905" target="_blank" class="text-white">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-            </div>
-            <p>&copy; 2023 Adari Guna Kaushik. All rights reserved.</p>
-        </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Brainify. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.blog-post').forEach(post => {
+            post.addEventListener('click', () => {
+                const content = post.querySelector('.blog-content');
+                content.classList.toggle('expanded');
+            });
+        });
+    </script>
 </body>
 </html>
