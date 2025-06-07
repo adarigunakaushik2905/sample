@@ -298,7 +298,7 @@
 </head>
 <body>
     <header>
-        <h1>SparkForScholars - Ignite Your Learning</h1>
+        <h1>Justbrainify - Ignite Your Learning</h1>
         <nav>
             <a href="#hero">Home</a>
             <a href="#videos">Videos</a>
@@ -310,7 +310,7 @@
 
     <main>
         <section id="hero" class="hero">
-            <h2>Welcome to SparkForScholars</h2>
+            <h2>Welcome to Justbrainify</h2>
             <p>Unleash your potential with our free tutorials and resources!</p>
             <video width="600" height="340" controls>
                 <source src="Brainify  Empowering Your AI Learning Journey_free.mp4" type="video/mp4" />
@@ -380,7 +380,7 @@
     </main>
 
     <footer>
-        <p>© 2025 SparkForScholars. Igniting Minds, One Lesson at a Time.</p>
+        <p>© 2025 Justbrainify. Igniting Minds, One Lesson at a Time.</p>
     </footer>
 </body>
 </html>
