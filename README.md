@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>sample</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="sample" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://adarigunakaushik2905.github.io/sample/" />
+<meta property="og:url" content="https://adarigunakaushik2905.github.io/sample/" />
+<meta property="og:site_name" content="sample" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="sample" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"sample","name":"sample","url":"https://adarigunakaushik2905.github.io/sample/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/sample/assets/css/style.css?v=fff39373cf5270302435d7f26da7179aee21fd01">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/sample/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Syllabus announcement and exam support for 3rd Semester B.Sc AI by Justbrainify YouTube Channel" />
     <meta name="keywords" content="B.Sc AI syllabus, Justbrainify exam support, Machine Learning study resources" />
     <title>Justbrainify - Ignite Your Learning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;600&amp;display=swap" rel="stylesheet" />
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
@@ -272,8 +308,8 @@
     <section id="home" class="hero">
         <h1>🎓 3rd Semester B.Sc AI</h1>
         <h2>📢 Syllabus Announcement + Exam Support by Justbrainify YouTube Channel</h2>
-        <a href="http://www.youtube.com/@BRAINIFYSPARK" target="_blank" class="subscribe-btn">🔔 Subscribe & Stay Ahead!</a>
-        <iframe class="intro-video" width="600" height="340" src= "Brainify  Empowering Your AI Learning Journey_free.mp4" title="Justbrainify Intro Video - Empowering Your AI Learning Journey" frameborder="0" allowfullscreen loading="lazy"></iframe>
+        <a href="http://www.youtube.com/@BRAINIFYSPARK" target="_blank" class="subscribe-btn">🔔 Subscribe &amp; Stay Ahead!</a>
+        <iframe class="intro-video" width="600" height="340" src="Brainify  Empowering Your AI Learning Journey_free.mp4" title="Justbrainify Intro Video - Empowering Your AI Learning Journey" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <!-- Syllabus Section -->
@@ -281,9 +317,9 @@
         <h2>🧠 Subjects Covered</h2>
         <ul>
             <li>📘 Machine Learning Basics</li>
-            <li>📊 Data Warehousing & Business Analytics</li>
-            <li>🤖 Knowledge Representation & Reasoning</li>
-            <li>🧪 Software Construction & Testing</li>
+            <li>📊 Data Warehousing &amp; Business Analytics</li>
+            <li>🤖 Knowledge Representation &amp; Reasoning</li>
+            <li>🧪 Software Construction &amp; Testing</li>
             <li>🌍 Environmental Science (GE)</li>
             <li>🐍 Python for Data Science Lab</li>
             <li>🧠 Machine Learning Lab</li>
@@ -297,7 +333,7 @@
             <li>✅ Complete Syllabus Overview</li>
             <li>✅ Topic-by-Topic Study Videos</li>
             <li>✅ Important Questions for Exams</li>
-            <li>✅ Detailed Notes in PDF Format (<a href="https://via.placeholder.com/3-sem.pdf" download>Download Syllabus</a>)</li>
+            <li>✅ Detailed Notes in PDF Format (<a href="https://via.placeholder.com/3-sem.pdf" download="">Download Syllabus</a>)</li>
             <li>✅ All Resources Linked in Video Descriptions</li>
             <li>✅ One-Stop Website Access for All Materials</li>
         </ul>
@@ -310,7 +346,7 @@
         <p>🌐 Website: (Coming Soon)</p>
         <h3>Ask Your Doubts</h3>
         <form id="comment-form">
-            <textarea id="comment-input" placeholder="Type your doubt here..." required></textarea>
+            <textarea id="comment-input" placeholder="Type your doubt here..." required=""></textarea>
             <button type="submit">Submit</button>
         </form>
         <div class="success-message" id="success-message">Comment posted successfully!</div>
@@ -323,7 +359,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>🔔 Subscribe & Stay Ahead! | 💬 Doubts? Ask in Comments</p>
+        <p>🔔 Subscribe &amp; Stay Ahead! | 💬 Doubts? Ask in Comments</p>
         <p>🌐 Visit Website: (Coming Soon) | 📧 Email: <a href="mailto:justbrainifyofficial@gmail.com">justbrainifyofficial@gmail.com</a></p>
         <p>© 2025 Justbrainify. Igniting Minds, One Lesson at a Time.</p>
     </footer>
@@ -392,4 +428,12 @@
             }, error => console.error('Error fetching comments: ', error));
     </script>
 </body>
+</html>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
 </html>
