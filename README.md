@@ -3,385 +3,393 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Free educational tutorials and resources by SparkForScholars" />
-    <meta name="keywords" content="education, tutorials, YouTube, study guides" />
-    <title>SparkForScholars - Ignite Your Learning</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta name="description" content="Syllabus announcement and exam support for 3rd Semester B.Sc AI by Justbrainify YouTube Channel" />
+    <meta name="keywords" content="B.Sc AI syllabus, Justbrainify exam support, Machine Learning study resources" />
+    <title>Justbrainify - Ignite Your Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo+2:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
         }
+
         body {
+            font-family: 'Exo 2', sans-serif;
+            background: linear-gradient(135deg, #1a1a3d 0%, #2a2a5e 100%);
+            color: #e0e0e0;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             scroll-behavior: smooth;
         }
+
         header {
-            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.8);
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #39FF14;
         }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            animation: fadeInDown 1s ease-in-out;
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #39FF14;
+            text-transform: uppercase;
         }
+
         nav a {
-            color: white;
+            color: #00BFFF;
             text-decoration: none;
-            margin: 0 1.5rem;
+            margin: 0 1rem;
             font-weight: 600;
-            transition: color 0.3s ease, transform 0.3s ease;
+            transition: color 0.3s;
         }
+
         nav a:hover {
-            color: #ffd700;
-            transform: scale(1.1);
+            color: #39FF14;
         }
-        main {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-        }
-        section {
-            margin: 2rem 0;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        section:hover {
-            transform: translateY(-5px);
-        }
+
         .hero {
-            background: url('https://source.unsplash.com/random/1200x400/?education') no-repeat center/cover;
-            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background: url('https://source.unsplash.com/random/1920x1080/?technology,ai') no-repeat center/cover;
+            background-attachment: fixed;
+            padding: 1rem;
         }
-        .hero h2::before {
-            content: '\f19d'; /* Graduation cap icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            color: #39FF14;
+            text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
         }
-        .videos {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+
+        .hero h2 {
+            font-size: 1.75rem;
+            margin: 0.5rem 0 1rem;
+            color: #00BFFF;
         }
-        .videos h2::before {
-            content: '\f03d'; /* Video icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
+
+        .subscribe-btn {
+            background: #39FF14;
+            color: #1a1a3d;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            margin: 1rem 0;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .resources {
-            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+
+        .subscribe-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
         }
-        .resources h2::before {
-            content: '\f15c'; /* File icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-        }
-        .blog {
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
-        }
-        .blog h2::before {
-            content: '\f303'; /* Pen icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-        }
-        .contact {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-        }
-        .contact h2::before {
-            content: '\f0e0'; /* Envelope icon */
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            margin-right: 0.5rem;
-        }
-        .hero h2, .videos h2, .resources h2, .blog h2, .contact h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: #6a11cb;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .hero video {
-            max-width: 100%;
+
+        .intro-video {
+            max-width: 600px;
+            width: 100%;
+            border: 2px solid #00BFFF;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+            transition: transform 0.3s;
         }
-        .hero video:hover {
+
+        .intro-video:hover {
             transform: scale(1.02);
         }
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: #ff6f61;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-top: 1.5rem;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .btn:hover {
-            background: #e65b50;
-            transform: translateY(-2px);
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .video-grid div {
-            text-align: center;
-            background: white;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        .video-grid div:hover {
-            transform: translateY(-5px);
-        }
-        .video-grid iframe {
-            border-radius: 10px;
-            width: 100%;
-            height: 200px;
-        }
-       .resource-list {
-    list-style: none;
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
-        .resource-list li {
-            margin: 0.75rem 0;
-        }
-        .resource-list a {
-            color: #6a11cb;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .resource-list a:hover {
-            color: #ffd700;
-        }
-        .blog-post {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: box-shadow 0.3s ease;
-        }
-        .blog-post:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .blog-post h3 {
-            color: #6a11cb;
-            margin-bottom: 0.75rem;
-        }
-        .blog-content {
-            max-height: 5rem;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-        .blog-content.expanded {
-            max-height: none;
-        }
-        form {
-            max-width: 600px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        form label {
-            display: block;
-            margin: 0.75rem 0;
-            font-weight: 600;
-            color: #6a11cb;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: border-color 0.3s ease;
-        }
-        form input:focus, form textarea:focus {
-            border-color: #6a11cb;
-            outline: none;
-        }
-        form button {
-            padding: 0.75rem 2rem;
-            background: #6a11cb;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        form button:hover {
-            background: #510c99;
-            transform: translateY(-2px);
-        }
-        footer {
-            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
-            color: white;
+        .section {
+            padding: 3rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
         }
-        footer p {
+
+        .section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #00BFFF;
+            margin-bottom: 1rem;
+        }
+
+        .section ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .section ul li {
             font-size: 1.1rem;
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
         }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .section ul li a {
+            color: #00BFFF;
+            text-decoration: none;
         }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8rem;
+
+        .section ul li a:hover {
+            color: #39FF14;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        #contact textarea {
+            width: 100%;
+            height: 100px;
+            padding: 0.5rem;
+            background: #2a2a5e;
+            border: 2px solid #00BFFF;
+            color: #e0e0e0;
+            font-family: 'Exo 2', sans-serif;
+            resize: none;
+        }
+
+        #contact button {
+            background: #39FF14;
+            color: #1a1a3d;
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        #contact button:hover {
+            transform: scale(1.05);
+        }
+
+        #comments-list {
+            margin-top: 1rem;
+        }
+
+        .comment {
+            background: #2a2a5e;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-left: 4px solid #00BFFF;
+        }
+
+        .success-message, .error-message {
+            display: none;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .success-message {
+            background: #39FF14;
+            color: #1a1a3d;
+        }
+
+        .error-message {
+            background: #ff4d4d;
+            color: #e0e0e0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #39FF14;
+        }
+
+        footer p {
+            margin: 0.25rem 0;
+        }
+
+        footer a {
+            color: #00BFFF;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #39FF14;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
             }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .intro-video {
+                max-width: 100%;
+                height: 200px;
+            }
+
+            header {
+                flex-direction: column;
+                padding: 0.5rem;
+            }
+
             nav a {
-                display: block;
-                margin: 0.75rem 0;
+                margin: 0.5rem;
             }
-            section {
-                padding: 2rem 1rem;
-            }
-            .video-grid {
-                grid-template-columns: 1fr;
+
+            .section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
-    <script>
-        document.querySelectorAll('.blog-post').forEach(post => {
-            post.addEventListener('click', () => {
-                const content = post.querySelector('.blog-content');
-                content.classList.toggle('expanded');
-            });
-        });
-    </script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Justbrainify - Ignite Your Learning</h1>
+        <div class="logo">Justbrainify</div>
         <nav>
-            <a href="#hero">Home</a>
-            <a href="#videos">Videos</a>
+            <a href="#home">Home</a>
+            <a href="#syllabus">Syllabus</a>
             <a href="#resources">Resources</a>
-            <a href="#blog">Blog</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section id="hero" class="hero">
-            <h2>Welcome to Justbrainify</h2>
-            <p>Unleash your potential with our free tutorials and resources!</p>
-            <video width="600" height="340" controls>
-                <source src="Brainify  Empowering Your AI Learning Journey_free.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <a href="#videos" class="btn">Explore Tutorials</a>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>🎓 3rd Semester B.Sc AI</h1>
+        <h2>📢 Syllabus Announcement + Exam Support by Justbrainify YouTube Channel</h2>
+        <a href="http://www.youtube.com/@BRAINIFYSPARK" target="_blank" class="subscribe-btn">🔔 Subscribe & Stay Ahead!</a>
+        <iframe class="intro-video" width="600" height="340" src= "Brainify  Empowering Your AI Learning Journey_free.mp4" title="Justbrainify Intro Video - Empowering Your AI Learning Journey" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </section>
 
-        <section id="videos" class="videos">
-            <h2>Featured Tutorials</h2>
-            <div class="video-grid">
-                <div>
-                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Math Basics" frameborder="0" allowfullscreen></iframe>
-                    <p>Master Math Basics</p>
-                </div>
-                <div>
-                    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" title="Science Explainers" frameborder="0" allowfullscreen></iframe>
-                    <p>Discover Science</p>
-                </div>
-                <div>
-                    <iframe src="https://www.youtube.com/embed/e-ORhEE9VVg" title="Programming Tutorials" frameborder="0" allowfullscreen></iframe>
-                    <p>Code Like a Pro</p>
-                </div>
-            </div>
-        </section>
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="section">
+        <h2>🧠 Subjects Covered</h2>
+        <ul>
+            <li>📘 Machine Learning Basics</li>
+            <li>📊 Data Warehousing & Business Analytics</li>
+            <li>🤖 Knowledge Representation & Reasoning</li>
+            <li>🧪 Software Construction & Testing</li>
+            <li>🌍 Environmental Science (GE)</li>
+            <li>🐍 Python for Data Science Lab</li>
+            <li>🧠 Machine Learning Lab</li>
+        </ul>
+    </section>
 
-        <section id="resources" class="resources">
-            <h2>Study Resources</h2>
-            <ul class="resource-list">
-                <li><a href="math-formulas.pdf" download>3rd SEM Syllabus</a></li>
-                <li><a href="science-notes.pdf" download>Science Revision Notes</a></li>
-                <li><a href="beginners_python_cheat_sheet_pcc_all.pdf" download>Python Cheat Sheet</a></li>
-            </ul>
-        </section>
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <h2>📚 Coming This Semester on Justbrainify</h2>
+        <ul>
+            <li>✅ Complete Syllabus Overview</li>
+            <li>✅ Topic-by-Topic Study Videos</li>
+            <li>✅ Important Questions for Exams</li>
+            <li>✅ Detailed Notes in PDF Format (<a href="https://via.placeholder.com/3-sem.pdf" download>Download Syllabus</a>)</li>
+            <li>✅ All Resources Linked in Video Descriptions</li>
+            <li>✅ One-Stop Website Access for All Materials</li>
+        </ul>
+    </section>
 
-        <section id="blog" class="blog">
-            <h2>Latest Insights</h2>
-            <div class="blog-post">
-                <h3>Study Smarter, Not Harder</h3>
-                <div class="blog-content">
-                    <p>Discover techniques to maximize your study efficiency and achieve better results in less time.</p>
-                </div>
-            </div>
-            <div class="blog-post">
-                <h3>Why Curiosity Fuels Success</h3>
-                <div class="blog-content">
-                    <p>Learn how a curious mindset can transform your learning journey and open new opportunities.</p>
-                </div>
-            </div>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>💬 Have Doubts? Get in Touch!</h2>
+        <p>📧 Email: <a href="mailto:justbrainifyofficial@gmail.com">justbrainifyofficial@gmail.com</a></p>
+        <p>🌐 Website: (Coming Soon)</p>
+        <h3>Ask Your Doubts</h3>
+        <form id="comment-form">
+            <textarea id="comment-input" placeholder="Type your doubt here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="success-message" id="success-message">Comment posted successfully!</div>
+        <div class="error-message" id="error-message">Failed to post comment. Please try again.</div>
+        <div id="comments-list">
+            <h3>Comments</h3>
+            <!-- Comments will be dynamically added here -->
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2>Get in Touch</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
-
+    <!-- Footer -->
     <footer>
+        <p>🔔 Subscribe & Stay Ahead! | 💬 Doubts? Ask in Comments</p>
+        <p>🌐 Visit Website: (Coming Soon) | 📧 Email: <a href="mailto:justbrainifyofficial@gmail.com">justbrainifyofficial@gmail.com</a></p>
         <p>© 2025 Justbrainify. Igniting Minds, One Lesson at a Time.</p>
     </footer>
+
+    <script>
+        // Initialize Firebase (Replace with your Firebase config)
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value.trim();
+            const successMessage = document.getElementById('success-message');
+            const errorMessage = document.getElementById('error-message');
+
+            if (commentText) {
+                db.collection('comments').add({
+                    text: commentText,
+                    date: new Date().toISOString(),
+                    timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                })
+                .then(() => {
+                    commentInput.value = '';
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    setTimeout(() => successMessage.style.display = 'none', 3000);
+                })
+                .catch(error => {
+                    console.error('Error adding comment: ', error);
+                    errorMessage.style.display = 'block';
+                    successMessage.style.display = 'none';
+                    setTimeout(() => errorMessage.style.display = 'none', 3000);
+                });
+            }
+        });
+
+        function displayComments(comments) {
+            const commentsList = document.getElementById('comments-list');
+            commentsList.innerHTML = '<h3>Comments</h3>';
+            comments.forEach(comment => {
+                const commentData = comment.data();
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment');
+                const date = new Date(commentData.date).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
+                commentDiv.innerHTML = `<p>${commentData.text}</p><small>Posted on: ${date}</small>`;
+                commentsList.appendChild(commentDiv);
+            });
+        }
+
+        db.collection('comments')
+            .orderBy('timestamp', 'desc')
+            .onSnapshot(snapshot => {
+                const comments = [];
+                snapshot.forEach(doc => comments.push(doc));
+                displayComments(comments);
+            }, error => console.error('Error fetching comments: ', error));
+    </script>
 </body>
 </html>
